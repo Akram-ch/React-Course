@@ -17,9 +17,12 @@ preferrably you should also import babel
     ...
     <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
     <script src="index.js" type="text/babel">
 </head>
 ```
 
 adding the attribute type="text/babel" allows you to use JSX in any script tag
+
+## Why use React? : 
+___
