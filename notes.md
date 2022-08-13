@@ -26,7 +26,7 @@ adding the attribute type="text/babel" allows you to use JSX in any script tag
 
 ## Why use React? : 
 ___
-* Write composable code.
+## **Write composable code**:
 ### Creating and rendering React web components:
 
 index.js :
@@ -52,3 +52,18 @@ index.html
     </div>
 </body>
 ```
+## **React is declarative :**
+```Javascript
+const h1 = document.createElement(h1);
+const root = document.getElementById("root");
+h1.textContent = "some Text";
+h1.className = "Header";
+root.appendChild(h1);
+
+//this code can be reduced to a single line using React !
+
+ReactDOM.render(<h1 className="header">some text</h1>,
+document.getElementById("root"));
+```
+
+## JSX syntax : 
