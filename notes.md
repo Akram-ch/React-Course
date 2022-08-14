@@ -67,3 +67,37 @@ document.getElementById("root"));
 ```
 
 ## JSX syntax : 
+
+example: 
+```Javascript
+const page = (
+    <div>
+        <h1 className="header">This is JSX</h1>
+        <p>This is a paragraph</p>
+    </div>
+)
+ReactDOM.render(
+    page,
+    document.getElementById("root")
+)
+```
+
+## Importing React the "right" way :
+cli command: 
+
+```
+npx create-react-app my-app
+```Javascript
+import React from "react"
+import ReactDOM from "react-dom/client"
+```
+
+### Update Heads up
+```Javascript
+//version 17
+ReactDOM.render(<p></p>,document.getElementById("root")) 
+//version 18
+const root = ReactDOM.createRoot(document.getElementById("root"))
+root.render(navbar)
+```
+
