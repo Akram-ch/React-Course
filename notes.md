@@ -87,6 +87,8 @@ cli command:
 
 ```
 npx create-react-app my-app
+```
+Javascript file :
 ```Javascript
 import React from "react"
 import ReactDOM from "react-dom/client"
@@ -101,3 +103,99 @@ const root = ReactDOM.createRoot(document.getElementById("root"))
 root.render(navbar)
 ```
 
+____
+
+## Parent/Child components
+
+```Javascript
+function Header() { //child component
+    return (
+        <header>
+            <nav>
+                <img src="./react-logo.png" width="40px" />
+            </nav>
+        </header>
+    )
+}
+function Page() { //Parent component
+    return (
+        <div>
+            <Header /> //calling the child component
+            <h1>Reasons I'm excited to learn React</h1>
+            <ol>
+                <li>It's a popular library, so I'll be 
+                able to fit in with the cool kids!</li>
+                <li>I'm more likely to get a job as a developer
+                if I know React</li>
+            </ol>
+            <footer>
+                <small>© 2021 Ziroll development. All rights reserved.</small>
+            </footer>
+        </div>
+    )
+    ReactDOM.render(<Page />, document.getElementById('root'));
+
+}
+```
+
+## Organizing components : 
+
+header.js :
+```javascript
+import React from "react"
+
+export default function Header() {
+    return (
+        <header>
+            <nav className="nav">
+                <img src="./react-logo.png" className="nav-logo" />
+                <ul className="nav-items">
+                    <li>Pricing</li>
+                    <li>About</li>
+                    <li>Contact</li>
+                </ul>
+            </nav>
+        </header>
+    )
+}
+```
+
+index.js : 
+```javascript
+import React from "react"
+import ReactDOM from "react-dom"
+import Header from "./Header"
+function Footer() {
+    return (
+        <footer>
+            <small>© 2021 Ziroll development. All rights reserved.</small>
+        </footer>
+    )
+}
+
+function MainContent() {
+    return (
+        <div>
+            <h1>Reasons I'm excited to learn React</h1>
+            <ol>
+                <li>It's a popular library, so I'll be 
+                able to fit in with the cool kids!</li>
+                <li>I'm more likely to get a job as a developer
+                if I know React</li>
+            </ol>
+        </div>
+    )
+}
+
+function Page() {
+    return (
+        <div>
+            <Header />
+            <MainContent />
+            <Footer />
+        </div>
+    )
+}
+
+ReactDOM.render(<Page />, document.getElementById("root"))
+```
