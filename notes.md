@@ -284,3 +284,18 @@ console.log(name) //Mr. Whiskerson
 ```
 ___
 ## Review - array.map() method : 
+The array.map() method returns a new array with the same size by applying the function passed in as a parameter on each element in the original array.
+
+example :
+```javascript
+const array = [1,2,3,4,5];
+const squared = array.map((number)=> number*number;
+) //
+console.log(squared) //[1,4,9,16,25]
+```
+___
+## Conditional rendering :
+```javascript
+    {props.openslots === 0 && <div>SOLD OUT</div>}
+    //Sold out is only rendered when props. openslots == 0
+```
