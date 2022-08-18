@@ -299,3 +299,5 @@ ___
     {props.openslots === 0 && <div>SOLD OUT</div>}
     //Sold out is only rendered when props. openslots == 0
 ```
+
+___
