@@ -300,4 +300,97 @@ ___
     //Sold out is only rendered when props. openslots == 0
 ```
 
-___
+# Dynamic web design :
+
+## Event Listeners : 
+```javascript
+    import React from "react"
+
+export default function App() {
+    function handleClick() {
+        console.log("I was clicked!")
+    }
+    return (
+        <div className="container">
+            <img src="https://picsum.photos/640/360" />
+            <button onClick={handleClick}>Click me</button>
+        </div>
+    )
+}
+```
+
+## props vs states : 
+ ###    props : property that is passed to a component in order for that component to run correctly, props are immutable.
+
+ ### state :  values that are defined **within** a component. They are used any time a value needs to be updated on the screen
+
+quiz : 
+```markdown
+1. How would you describe the concept of "state"?
+A way for React to remember saved values from within a component.
+This is similar to declaring variables from within a component,
+with a few added bonuses (which we'll get to later)
+
+
+2. When would you want to use props instead of state?
+Anytime you want to pass data into a component so that
+component can determine what will get displayed on the
+screen.
+
+
+3. When would you want to use state instead of props?
+Anytime you want a component to maintain some values from
+within the component. (And "remember" those values even
+when React re-renders the component).
+
+
+4. What does "immutable" mean? Are props immutable? Is state immutable?
+Unchanging. Props are immutable. State is mutable.
+```
+
+## React.useState() :
+```javascript
+export default function App() {
+    const result = React.useState("Yes")
+    console.log(result) //["Yes", f() -- empty function]
+    return (
+        <div className="state">
+            <h1 className="state--title">Is state important to know?</h1>
+            <div className="state--value">
+                <h1>{result[0]}</h1>
+            </div>
+        </div>
+    )
+}
+```
+
+quiz : 
+```markdown
+    1. You have 2 options for what you can pass in to a
+   state setter function (e.g. `setCount`). What are they?
+   
+a. New value of state (setCount(42))
+b. Callback function - whatever the callback function 
+   returns === new value of state
+
+
+2. When would you want to pass the first option (from answer
+   above) to the state setter function?
+Whenever you don't need the previous value of state to determine
+what the new value of state should be.
+
+
+3. When would you want to pass the second option (from answer above) to the state setter function?
+Whenever you DO need the previous value to determine the new value
+```
+## Review - Ternary operator : 
+```javascript
+    let answer  // Use ternary here
+    if(isGoingOut === true) {
+        answer = "Yes"
+    } else {
+        answer = "No"
+    }
+    // is equivalent to : 
+    answer = isGoingOut === true ? "yes" : "no" 
+```
