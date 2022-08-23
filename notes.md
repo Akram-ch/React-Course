@@ -394,3 +394,102 @@ Whenever you DO need the previous value to determine the new value
     // is equivalent to : 
     answer = isGoingOut === true ? "yes" : "no" 
 ```
+
+### Quiz : Conditional rendering
+```markdown
+1. What is "conditional rendering"?
+When we want to only sometimes display something on the page
+based on a condition of some sort
+
+
+2. When would you use &&?
+When you want to either display something or NOT display it
+
+
+3. When would you use a ternary?
+When you need to decide which thing among 2 options to display
+
+
+4. What if you need to decide between > 2 options on
+   what to display?
+Use an `if...else if... else` conditional or a `switch` statement
+```
+
+# React Forms :
+
+```javascript
+export default function Form() {
+    const [formData, setFormData] = React.useState(
+        {firstName: "", lastName: "", email: ""}
+    )
+    
+    /**
+     * Challenge: add an email field/state to the form
+     */
+    
+    console.log(formData)
+    
+    function handleChange(event) {
+        setFormData(prevFormData => {
+            return {
+                ...prevFormData,
+                [event.target.name]: event.target.value
+            }
+        })
+    }
+        return (
+        <form>
+            <input
+                type="text"
+                placeholder="First Name"
+                onChange={handleChange}
+                name="firstName"value
+                value={formData.firstName}
+            />
+            <input
+                type="text"
+                placeholder="Last Name"
+                onChange={handleChange}
+                name="lastName"
+                value ={formData.lastName}
+            />
+        </form>
+    )
+}
+```
+
+textArea : 
+```html
+    <textarea 
+        value={formData.comments}
+        placeholder="Comments"
+        onChange={handleChange}
+        name="comments"
+    />
+```
+
+checkboxes : 
+```html
+    <input 
+            type="checkbox" 
+            id="isFriendly" 
+            checked={formData.isFriendly}
+            onChange={handleChange}
+            name="isFriendly"
+        />
+    <label htmlFor="isFriendly">Are you friendly?</label>
+    //htmlFor : associates the label with the input
+```
+
+some good practices : 
+```javascript
+    function handleChange(event) {
+        const {name, value, type, checked} = event.target
+        setFormData(prevFormData => {
+            return {
+                ...prevFormData,
+                [name]: type === "checkbox" ? checked : value
+            }
+        })
+    }
+```
